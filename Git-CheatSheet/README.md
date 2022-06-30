@@ -121,6 +121,22 @@ Rewriting branches, updating commits and clearing history
 #### i.   Apply any commits of current branch ahead of specified one
 
       git rebase [branch]
+      
+#### ii.  Squash all commits into one single commit
+
+      (For no HEAD):
+      git rebase -i --root
+
+      (With HEAD):
+      git rebase -i HEAD~3
+
+      pick base-commit
+      squash new-commit1
+      squash new-commit2
+
+      git push --force origin feature-branch
+      
+      
 #### ii.  Clear staging area, rewrite working tree from specified commit
 
       git reset --hard [commit]
